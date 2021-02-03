@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pr-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Link Saver</title>
+  </head>
+  <body>
+    <div class='container'>
+      <header>
+        <h1>Link Saver</h1>
+        <form action="/" method="POST">
+          <input type="text" id='link' name="link", placeholder="link name, link url">
+        </form>
+      </header>
+  
+      <section id='links'>
+        <p>Saved links: </p>
+        <ul>
+          <% links.forEach(link => { %>
+            <li>
+              <div class="link">
+                <a href="<%= link.url%>" target="_blank"><%=link.name%></a>
+                <a href="/delete/<%= link.name%>" class='btn-delete'>X</a>
+              </div>
+            </li>
+          <% }) %>
+        </ul>
+      </section>
+    </div>
+  </body>
+</html>
